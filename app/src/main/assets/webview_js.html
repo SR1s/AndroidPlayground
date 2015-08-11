@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebView本地和Js进行交互</title>
+        <script>
+            function showMessage() {
+                AndroidInterface.toastMessage("Js调用android代码展示内容");
+            }
+            function getSum() {
+                AndroidInterface.sum(1, 200);
+            }
+            function callFromAndroid() {
+                AndroidInterface.toastMessage("Android调用Js，再由Js调用android展示的内容");
+            }
+        </script>
+    </head>
+    <body>
+    <button type="button" onclick="showMessage()">点我调用本地方法</button>
+    <button type="button" onclick="getSum()">点我调用本地方法</button>
+    </body>
+</html>

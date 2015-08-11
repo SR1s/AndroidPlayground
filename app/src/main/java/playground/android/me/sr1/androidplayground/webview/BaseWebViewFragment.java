@@ -1,12 +1,13 @@
 package playground.android.me.sr1.androidplayground.webview;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebChromeClient;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -55,6 +56,7 @@ public class BaseWebViewFragment extends Fragment {
         mGoBackBtn.setOnClickListener(clickListener);
         mGoForwardBtn.setOnClickListener(clickListener);
         mRefreshBtn.setOnClickListener(clickListener);
+        view.findViewById(R.id.invokeJs).setOnClickListener(clickListener);
 
         mWebView = (WebView) view.findViewById(R.id.webview);
 
@@ -63,7 +65,7 @@ public class BaseWebViewFragment extends Fragment {
     }
 
     protected void loadHomePage() {
-        mWebView.loadUrl("http://www.qq.com");
+        mWebView.loadUrl("file:///android_asset/webview_js.html");
     }
 
     protected View.OnClickListener clickListener = new View.OnClickListener() {
@@ -84,6 +86,9 @@ public class BaseWebViewFragment extends Fragment {
                     break;
                 case R.id.refresh:
                     refresh();
+                    break;
+                case R.id.invokeJs:
+                    mWebView.loadUrl("javascript:callFromAndroid();");
                     break;
                 default:
                     Log.i(TAG, "no id match");
@@ -121,6 +126,8 @@ public class BaseWebViewFragment extends Fragment {
 
     protected void settingWebView() {
         if (mWebView != null) {
+            mWebView.getSettings().setJavaScriptEnabled(true);
+            mWebView.addJavascriptInterface(new AndroidInterfaceForJs(getActivity().getApplication()), "AndroidInterface");
             mWebView.setWebViewClient(new WebViewClient() {
 
                 @Override
@@ -130,6 +137,25 @@ public class BaseWebViewFragment extends Fragment {
                 }
             });
 
+        }
+    }
+
+    public static class AndroidInterfaceForJs {
+
+        private final Context mContext;
+
+        public AndroidInterfaceForJs(Context ctx) {
+            mContext = ctx;
+        }
+
+        @JavascriptInterface
+        public void toastMessage(String message) {
+            Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
+        }
+
+        @JavascriptInterface
+        public void sum(int a, int b) {
+            Toast.makeText(mContext, "result is " + (a+b), Toast.LENGTH_LONG).show();
         }
     }
 }

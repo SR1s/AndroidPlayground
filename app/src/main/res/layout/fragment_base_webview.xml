@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,6 +6,7 @@
     tools:context="playground.android.me.sr1.androidplayground.webview.BaseWebViewFragment">
 
     <LinearLayout
+        android:id="@+id/topbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -21,18 +22,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="分享" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
         <Button
             android:id="@+id/goback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="返回" />
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_below="@+id/topbar"
+        android:layout_above="@+id/bottombar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/bottombar"
+        android:gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/goforward"
@@ -45,11 +55,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="刷新" />
+
+        <Button
+            android:id="@+id/invokeJs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="调用Js" />
     </LinearLayout>
 
-    <WebView
-        android:id="@+id/webview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-</LinearLayout>
+</RelativeLayout>

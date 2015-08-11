@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         mList = (ListView) findViewById(R.id.main_list);
         mDrawer = (DrawerLayout) findViewById(R.id.main_drawer);
 
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.main_content, IntroduceFragment.newInstance());
+        transaction.commit();
+
         ListAdapter adapter = new ArrayAdapter<ItemInfo>(MainActivity.this, android.R.layout.simple_list_item_1, mData);
         mList.setAdapter(adapter);
         mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
