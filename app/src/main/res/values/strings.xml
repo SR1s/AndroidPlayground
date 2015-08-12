@@ -6,4 +6,7 @@
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="author">SR1</string>
+    <string name="motto">在温室里想象南极，\n谁都可以做到。</string>
 </resources>

@@ -1,19 +1,49 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bg_color_deep"
     tools:context="playground.android.me.sr1.androidplayground.IntroduceFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            fresco:placeholderImage="@drawable/logo"/>
+            fresco:placeholderImage="@drawable/logo"
+            fresco:roundAsCircle="false"
+            fresco:roundedCornerRadius="10dp"
+            fresco:roundingBorderColor="@color/border_color"
+            fresco:roundingBorderWidth="2dp" />
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_below="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:text="@string/author"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@color/intro_title_color" />
+
+        <TextView
+            android:layout_below="@+id/author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_horizontal"
+            android:lines="2"
+            android:text="@string/motto"
+            android:textAppearance="?android:textAppearance"
+            android:textColor="@color/intro_title_color" />
     </RelativeLayout>
 
 
