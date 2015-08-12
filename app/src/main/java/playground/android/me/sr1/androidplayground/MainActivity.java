@@ -16,6 +16,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import playground.android.me.sr1.androidplayground.RefleshLayout.RefleshLayoutFragment;
+import playground.android.me.sr1.androidplayground.ViewPager.ViewPagerFragment;
 import playground.android.me.sr1.androidplayground.webview.BaseWebViewFragment;
 
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     ItemInfo[] mData = {
             new ItemInfo("主界面", MainActivity.class, ItemInfo.TYPE_ACTIVITY),
             new ItemInfo("RecycleView+SwipeRefleshLayout", RefleshLayoutFragment.class, ItemInfo.TYPE_FRAGMENT),
+            new ItemInfo("ViewPager", ViewPagerFragment.class, ItemInfo.TYPE_FRAGMENT),
             new ItemInfo("webview", BaseWebViewFragment.class, ItemInfo.TYPE_FRAGMENT)
     };
     ListView mList;

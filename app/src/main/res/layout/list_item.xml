@@ -11,31 +11,36 @@
         android:id="@+id/item_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/item_title"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/item_title"
+        android:scaleType="centerInside"
         android:src="@drawable/item_icon" />
 
     <TextView
         android:id="@+id/item_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/item_icon"
-        android:layout_alignTop="@+id/item_icon"
         android:layout_toEndOf="@+id/item_icon"
         android:layout_toLeftOf="@+id/item_arrow"
         android:layout_toRightOf="@+id/item_icon"
         android:layout_toStartOf="@+id/item_arrow"
         android:gravity="center_vertical"
-        android:padding="5dp"
-        android:textAppearance="?android:textAppearanceLarge"
+        android:paddingLeft="10dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:textAppearance="?android:textAppearance"
         tools:text="item title" />
 
     <ImageView
         android:id="@+id/item_arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/item_title"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/item_title"
         android:src="@drawable/item_arrow" />
 
 </RelativeLayout>
