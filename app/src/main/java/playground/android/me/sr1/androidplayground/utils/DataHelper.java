@@ -2,6 +2,8 @@ package playground.android.me.sr1.androidplayground.utils;
 
 import java.util.ArrayList;
 
+import playground.android.me.sr1.androidplayground.R;
+
 /**
  * Created by sr1 on 15/8/12.
  */
@@ -103,6 +105,28 @@ public class DataHelper {
             this.mTitle = title;
             this.mDate = date;
             this.mContent = content;
+        }
+    }
+
+    public static ArrayList<MovieData> getMovieData() {
+        ArrayList<MovieData> list = new ArrayList<MovieData>();
+
+        list.add(new MovieData("人工智能", R.drawable.data_movies_ai));
+        list.add(new MovieData("消失的爱人", R.drawable.data_movies_gone_girl));
+        list.add(new MovieData("寿司之神", R.drawable.data_movies_jiro_dreams_of_sushi));
+        list.add(new MovieData("凉宫春日的犹豫", R.drawable.data_movies_lianggong));
+        list.add(new MovieData("我的名字叫可汗", R.drawable.data_movies_my_name_is_khan));
+
+        return list;
+    }
+
+    public static class MovieData {
+        public String mTitle;
+        public int mPicResId;
+
+        public MovieData(String title, int picResId) {
+            this.mTitle = title;
+            this.mPicResId = picResId;
         }
     }
 }
