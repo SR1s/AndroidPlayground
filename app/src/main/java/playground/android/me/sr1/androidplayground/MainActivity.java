@@ -18,6 +18,8 @@ import android.widget.ListView;
 import playground.android.me.sr1.androidplayground.RefleshLayout.RefleshLayoutFragment;
 import playground.android.me.sr1.androidplayground.ViewPager.ViewPagerFragment;
 import playground.android.me.sr1.androidplayground.book.FiftyHacks.SwitcherFragment;
+import playground.android.me.sr1.androidplayground.book.FirstLineOfCode.Media.NotificationFragment;
+import playground.android.me.sr1.androidplayground.book.FirstLineOfCode.Service.ServiceFragment;
 import playground.android.me.sr1.androidplayground.webview.BaseWebViewFragment;
 
 
@@ -29,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
             new ItemInfo("RecycleView+SwipeRefleshLayout", RefleshLayoutFragment.class, ItemInfo.TYPE_FRAGMENT),
             new ItemInfo("ViewPager", ViewPagerFragment.class, ItemInfo.TYPE_FRAGMENT),
             new ItemInfo("webview", BaseWebViewFragment.class, ItemInfo.TYPE_FRAGMENT),
-            new ItemInfo("TextSwitcher", SwitcherFragment.class, ItemInfo.TYPE_FRAGMENT)
+            new ItemInfo("TextSwitcher", SwitcherFragment.class, ItemInfo.TYPE_FRAGMENT),
+            new ItemInfo("Notification", NotificationFragment.class, ItemInfo.TYPE_FRAGMENT),
+            new ItemInfo("Service", ServiceFragment.class, ItemInfo.TYPE_FRAGMENT)
     };
     ListView mList;
     DrawerLayout mDrawer;

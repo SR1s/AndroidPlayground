@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="playground.android.me.sr1.androidplayground.book.FirstLineOfCode.Media.NotificationFragment">
+    <Button
+        android:id="@+id/notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification"/>
+    <Button
+        android:id="@+id/notification_with_intent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification_intent"/>
+    <Button
+        android:id="@+id/notification_with_led"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification with led"/>
+    <Button
+        android:id="@+id/notification_with_vibare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification with vibare"/>
+    <Button
+        android:id="@+id/notification_with_sound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification with Sound"/>
+</LinearLayout>
