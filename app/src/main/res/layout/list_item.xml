@@ -16,7 +16,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/item_title"
         android:scaleType="centerInside"
-        android:src="@drawable/item_icon" />
+        android:src="@drawable/basic_signs" />
 
     <TextView
         android:id="@+id/item_title"
@@ -41,6 +41,6 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/item_title"
-        android:src="@drawable/item_arrow" />
+        android:src="@drawable/basic_bolt" />
 
 </RelativeLayout>

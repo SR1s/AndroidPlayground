@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
             new ItemInfo("webview", BaseWebViewFragment.class, ItemInfo.TYPE_FRAGMENT),
             new ItemInfo("TextSwitcher", SwitcherFragment.class, ItemInfo.TYPE_FRAGMENT),
             new ItemInfo("Notification", NotificationFragment.class, ItemInfo.TYPE_FRAGMENT),
-            new ItemInfo("Service", ServiceFragment.class, ItemInfo.TYPE_FRAGMENT)
+            new ItemInfo("Service", ServiceFragment.class, ItemInfo.TYPE_FRAGMENT),
+            new ItemInfo("IPC Test", IpcTestFragment.class, ItemInfo.TYPE_FRAGMENT)
     };
     ListView mList;
     DrawerLayout mDrawer;

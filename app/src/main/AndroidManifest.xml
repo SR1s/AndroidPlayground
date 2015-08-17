@@ -26,6 +26,9 @@
             android:enabled="true"
             android:exported="true" >
         </service>
+        <service android:name=".webview.IpcService"
+            android:enabled="true"
+            android:process=":ipcprocess" />
     </application>
 
 </manifest>
