@@ -15,8 +15,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/item_title"
+        android:layout_marginLeft="10dp"
         android:scaleType="centerInside"
-        android:src="@drawable/basic_signs" />
+        android:src="@drawable/item_icon" />
 
     <TextView
         android:id="@+id/item_title"
@@ -27,9 +28,9 @@
         android:layout_toRightOf="@+id/item_icon"
         android:layout_toStartOf="@+id/item_arrow"
         android:gravity="center_vertical"
+        android:paddingBottom="8dp"
         android:paddingLeft="10dp"
         android:paddingTop="8dp"
-        android:paddingBottom="8dp"
         android:textAppearance="?android:textAppearance"
         tools:text="item title" />
 
@@ -41,6 +42,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/item_title"
-        android:src="@drawable/basic_bolt" />
+        android:layout_marginRight="10dp"
+        android:src="@drawable/item_arrow" />
 
 </RelativeLayout>

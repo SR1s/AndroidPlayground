@@ -20,6 +20,7 @@ import playground.android.me.sr1.androidplayground.ViewPager.ViewPagerFragment;
 import playground.android.me.sr1.androidplayground.book.FiftyHacks.SwitcherFragment;
 import playground.android.me.sr1.androidplayground.book.FirstLineOfCode.Media.NotificationFragment;
 import playground.android.me.sr1.androidplayground.book.FirstLineOfCode.Service.ServiceFragment;
+import playground.android.me.sr1.androidplayground.sample.SampleActivity;
 import playground.android.me.sr1.androidplayground.webview.BaseWebViewFragment;
 
 
@@ -34,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
             new ItemInfo("TextSwitcher", SwitcherFragment.class, ItemInfo.TYPE_FRAGMENT),
             new ItemInfo("Notification", NotificationFragment.class, ItemInfo.TYPE_FRAGMENT),
             new ItemInfo("Service", ServiceFragment.class, ItemInfo.TYPE_FRAGMENT),
-            new ItemInfo("IPC Test", IpcTestFragment.class, ItemInfo.TYPE_FRAGMENT)
+            new ItemInfo("IPC Test", IpcTestFragment.class, ItemInfo.TYPE_FRAGMENT),
+            new ItemInfo("Sample Activity", SampleActivity.class, ItemInfo.TYPE_ACTIVITY)
     };
     ListView mList;
     DrawerLayout mDrawer;
