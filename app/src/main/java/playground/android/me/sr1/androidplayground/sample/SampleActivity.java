@@ -8,7 +8,7 @@ import playground.android.me.sr1.androidplayground.ViewPager.ViewPagerFragment;
 import playground.android.me.sr1.androidplayground.book.FiftyHacks.SwitcherFragment;
 import playground.android.me.sr1.androidplayground.book.FirstLineOfCode.Media.NotificationFragment;
 import playground.android.me.sr1.androidplayground.book.FirstLineOfCode.Service.ServiceFragment;
-import playground.android.me.sr1.androidplayground.utils.component.ui.DrawerActivity;
+import playground.android.me.sr1.androidplayground.toolbox.component.activity.DrawerActivity;
 import playground.android.me.sr1.androidplayground.webview.BaseWebViewFragment;
 
 /**

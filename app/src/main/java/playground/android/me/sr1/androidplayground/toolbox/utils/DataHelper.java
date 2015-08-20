@@ -1,4 +1,4 @@
-package playground.android.me.sr1.androidplayground.utils;
+package playground.android.me.sr1.androidplayground.toolbox.utils;
 
 import java.util.ArrayList;
 

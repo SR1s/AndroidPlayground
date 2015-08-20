@@ -15,8 +15,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import playground.android.me.sr1.androidplayground.R;
-import playground.android.me.sr1.androidplayground.utils.ChapterFragment;
-import playground.android.me.sr1.androidplayground.utils.DataHelper;
+import playground.android.me.sr1.androidplayground.toolbox.utils.ChapterFragment;
+import playground.android.me.sr1.androidplayground.toolbox.utils.DataHelper;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -3,23 +3,20 @@ package playground.android.me.sr1.androidplayground.book.FiftyHacks;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageSwitcher;
-import android.widget.ImageView;
 import android.widget.TextSwitcher;
-import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 import playground.android.me.sr1.androidplayground.R;
-import playground.android.me.sr1.androidplayground.utils.DataHelper;
+import playground.android.me.sr1.androidplayground.toolbox.utils.DataHelper;
 
 public class SwitcherFragment extends Fragment {
 

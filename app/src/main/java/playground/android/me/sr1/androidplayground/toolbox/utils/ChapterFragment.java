@@ -1,4 +1,4 @@
-package playground.android.me.sr1.androidplayground.utils;
+package playground.android.me.sr1.androidplayground.toolbox.utils;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

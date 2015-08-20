@@ -18,13 +18,12 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageSwitcher;
-import android.widget.ImageView;
 import android.widget.TextSwitcher;
 import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 import playground.android.me.sr1.androidplayground.R;
-import playground.android.me.sr1.androidplayground.utils.DataHelper;
+import playground.android.me.sr1.androidplayground.toolbox.utils.DataHelper;
 
 public class ServiceFragment extends Fragment {
 

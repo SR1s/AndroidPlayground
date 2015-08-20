@@ -1,4 +1,4 @@
-package playground.android.me.sr1.androidplayground.utils.component.ui;
+package playground.android.me.sr1.androidplayground.toolbox.component.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
