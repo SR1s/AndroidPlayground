@@ -21,6 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".sample.SampleActivity" />
+        <activity android:name=".book.FirstLineOfCode.FirstLineOfCodeIndexActivity" />
+        <activity android:name=".book.FiftyHacks.FiftyHackIndexActivity" />
 
         <service
             android:name=".book.FirstLineOfCode.Service.MyService"

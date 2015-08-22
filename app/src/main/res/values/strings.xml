@@ -29,4 +29,9 @@
 　　一个人需要培养自己的快乐能力，这要比追求财富重要得多。</string>
 
     <string name="utils_double_press_back_to_close">再按一次退出应用程序</string>
+
+    <string name="book_50_android_hacks">50 Android Hacks</string>
+    <string name="book_50_android_hacks_chinese">打造高质量Android应用\nAndroid开发必知的50个诀窍</string>
+    <string name="book_first_line_of_code">第一行代码: Android</string>
+    <string name="book_first_line_of_code_extra">由浅入深、系统全面\n讲解Android软件开发方方面面</string>
 </resources>

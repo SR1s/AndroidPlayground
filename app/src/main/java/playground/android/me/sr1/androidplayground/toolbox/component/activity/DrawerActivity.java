@@ -15,8 +15,6 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.awt.font.TextAttribute;
-
 import playground.android.me.sr1.androidplayground.R;
 import playground.android.me.sr1.androidplayground.toolbox.utils.TimeUtils;
 
@@ -145,6 +143,7 @@ public abstract class DrawerActivity<DataType extends DrawerActivity.DrawerItem>
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                     transaction.replace(R.id.utils_drawer_container, (Fragment) data.mDest);
                     transaction.commit();
+                    setTitle(data.mTitle);
                     mDrawerLayout.closeDrawer(mDrawerList);
                     mCurrentItemPosition = position;
                 }
@@ -156,12 +155,12 @@ public abstract class DrawerActivity<DataType extends DrawerActivity.DrawerItem>
      * 展示第一个fragment
      */
     private void showFirstFragment() {
-        Fragment firstFragment = null;
+        DataType aimData = null;
         if (mFirstShowFragmentPosition < mData.length && mFirstShowFragmentPosition > 0) {
             // 位置有效的话，看下那个位置的是不是Fragment，不然的话不理了
             DataType data = mData[mFirstShowFragmentPosition];
             if (data.mDest instanceof Fragment) {
-                firstFragment = (Fragment) data.mDest;
+                aimData = data;
                 mCurrentItemPosition = mFirstShowFragmentPosition;
             } else {
                 Log.w(TAG, String.format("[mDest is not a fragment] [firstShowFragmentPosition: %d]", mFirstShowFragmentPosition));
@@ -170,18 +169,19 @@ public abstract class DrawerActivity<DataType extends DrawerActivity.DrawerItem>
             // 位置无效的话，查找第一个fragment
             for (int i = 0; i < mData.length; i++) {
                 if (mData[i].mDest instanceof Fragment) {
-                    firstFragment = (Fragment) mData[i].mDest;
+                    aimData = mData[i];
                     mCurrentItemPosition = i;
                     break;
                 }
             }
         }
 
-        if (firstFragment != null) {
+        if (aimData != null) {
             // 有fragment能显示就显示出来
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.utils_drawer_container, firstFragment);
+            transaction.replace(R.id.utils_drawer_container, (Fragment) aimData.mDest);
             transaction.commit();
+            setTitle(aimData.mTitle);
         } else {
             Log.w(TAG, String.format("[no valid fragment] [firstShowFragmentPosition: %d]", mFirstShowFragmentPosition));
         }
