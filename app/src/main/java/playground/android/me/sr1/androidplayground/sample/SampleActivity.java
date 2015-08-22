@@ -1,5 +1,6 @@
 package playground.android.me.sr1.androidplayground.sample;
 
+import playground.android.me.sr1.androidplayground.IntroduceFragment;
 import playground.android.me.sr1.androidplayground.IpcTestFragment;
 import playground.android.me.sr1.androidplayground.MainActivity;
 import playground.android.me.sr1.androidplayground.R;
@@ -12,45 +13,35 @@ import playground.android.me.sr1.androidplayground.toolbox.component.activity.Dr
 import playground.android.me.sr1.androidplayground.webview.BaseWebViewFragment;
 
 /**
+ * 侧边栏工具类的样例程序
+ *
  * Created by sr1 on 15/8/17.
  */
-public class SampleActivity extends DrawerActivity<SampleActivity.ItemInfo> {
+public class SampleActivity extends DrawerActivity<DrawerActivity.DrawerItem> {
     @Override
     protected int getListItemLayout() {
         return R.layout.list_item;
     }
 
     @Override
-    protected ItemInfo[] getDrawerItemData() {
-        return new ItemInfo[]{
+    protected DrawerItem[] getDrawerItemData() {
+        return new DrawerItem[]{
 
-                new ItemInfo("主界面", MainActivity.class),
-                new ItemInfo("RecycleView+SwipeRefleshLayout", RefleshLayoutFragment.class),
-                new ItemInfo("ViewPager", ViewPagerFragment.class),
-                new ItemInfo("webview", BaseWebViewFragment.class),
-                new ItemInfo("TextSwitcher", SwitcherFragment.class),
-                new ItemInfo("Notification", NotificationFragment.class),
-                new ItemInfo("Service", ServiceFragment.class),
-                new ItemInfo("进程间通讯测试", IpcTestFragment.class)
+                new DrawerItem("主界面", MainActivity.class),
+                new DrawerItem("介绍页面", new IntroduceFragment()),
+                new DrawerItem("RecycleView+SwipeRefleshLayout", new RefleshLayoutFragment()),
+                new DrawerItem("ViewPager", new ViewPagerFragment()),
+                new DrawerItem("webview", new BaseWebViewFragment()),
+                new DrawerItem("TextSwitcher", new SwitcherFragment()),
+                new DrawerItem("Notification", new NotificationFragment()),
+                new DrawerItem("Service", new ServiceFragment()),
+                new DrawerItem("进程间通讯测试", new IpcTestFragment()),
+                new DrawerItem("侧边栏工具类样例", SampleActivity.class)
         };
     }
 
     @Override
     protected int getDrawerHeaderResId() {
         return R.layout.fragment_introduce;
-    }
-
-    public static class ItemInfo {
-        Class mDest;
-        String mTitle;
-
-        public ItemInfo(String title, Class cls) {
-            this.mDest = cls;
-            this.mTitle = title;
-        }
-
-        public String toString() {
-            return mTitle;
-        }
     }
 }
