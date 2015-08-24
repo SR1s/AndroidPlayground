@@ -1,7 +1,6 @@
 package playground.android.me.sr1.androidplayground.sample;
 
 import playground.android.me.sr1.androidplayground.IntroduceFragment;
-import playground.android.me.sr1.androidplayground.IpcTestFragment;
 import playground.android.me.sr1.androidplayground.MainActivity;
 import playground.android.me.sr1.androidplayground.R;
 import playground.android.me.sr1.androidplayground.RefleshLayout.RefleshLayoutFragment;
@@ -35,7 +34,6 @@ public class SampleActivity extends DrawerActivity<DrawerActivity.DrawerItem> {
                 new DrawerItem("TextSwitcher", new SwitcherFragment()),
                 new DrawerItem("Notification", new NotificationFragment()),
                 new DrawerItem("Service", new ServiceFragment()),
-                new DrawerItem("进程间通讯测试", new IpcTestFragment()),
                 new DrawerItem("侧边栏工具类样例", SampleActivity.class)
         };
     }
