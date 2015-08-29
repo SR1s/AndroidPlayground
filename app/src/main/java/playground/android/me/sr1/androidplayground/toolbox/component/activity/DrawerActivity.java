@@ -219,6 +219,7 @@ public abstract class DrawerActivity<DataType extends DrawerActivity.DrawerItem>
         return UI_NO_LAYOUT;
     }
 
+    @NonNull
     protected abstract DataType[] getDrawerItemData();
 
     public static class DrawerItem {
