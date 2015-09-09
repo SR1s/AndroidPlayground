@@ -28,11 +28,15 @@
         <service
             android:name=".book.FirstLineOfCode.Service.MyService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
         <service
             android:name=".webview.IpcService"
             android:enabled="true"
             android:process=":ipcprocess" />
+
+        <!-- Demo: Notification: RemoteProcessService -->
+        <service android:name=".demos.RemoteProcessService"
+            android:process=":remmote_process" />
     </application>
 
 </manifest>
