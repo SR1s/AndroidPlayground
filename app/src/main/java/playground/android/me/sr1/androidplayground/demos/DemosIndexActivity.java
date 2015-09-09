@@ -2,7 +2,6 @@ package playground.android.me.sr1.androidplayground.demos;
 
 import playground.android.me.sr1.androidplayground.IntroduceFragment;
 import playground.android.me.sr1.androidplayground.R;
-import playground.android.me.sr1.androidplayground.book.FirstLineOfCode.Media.NotificationFragment;
 import playground.android.me.sr1.androidplayground.toolbox.component.activity.DrawerActivity;
 
 /**
@@ -18,7 +17,7 @@ public class DemosIndexActivity extends DrawerActivity {
     protected DrawerItem[] getDrawerItemData() {
         return new DrawerItem[] {
                 new DrawerItem("Introduce", new IntroduceFragment()),
-                new DrawerItem("Notification相关", new NotificationFragment())
+                new DrawerItem("Notification相关", new NotificationDemoFragment())
         };
     }
 

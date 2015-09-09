@@ -26,14 +26,14 @@ public class RemoteProcessService extends Service {
         @Override
         public void showNotification() throws RemoteException {
 
-//            mHandler.post(new Runnable() {
-//                @Override
-//                public void run() {
+            mHandler.post(new Runnable() {
+                @Override
+                public void run() {
                     Notification notification = new Notification(R.drawable.logo, "来自其他进程的通知", System.currentTimeMillis());
                     notification.setLatestEventInfo(getApplicationContext(), "来自其他进程的通知", "来自其他进程的通知", null);
                     mNotificationManager.notify(21, notification);
-//                }
-//            });
+                }
+            });
 
         }
 
