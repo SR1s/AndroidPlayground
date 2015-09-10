@@ -37,6 +37,9 @@
         <!-- Demo: Notification: RemoteProcessService -->
         <service android:name=".demos.RemoteProcessService"
             android:process=":remmote_process" />
+
+        <!-- Demo: Service: MainProcessService -->
+        <service android:name=".demos.service.MainProcessService" />
     </application>
 
 </manifest>
