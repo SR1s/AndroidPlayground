@@ -1,5 +1,6 @@
 package playground.android.me.sr1.androidplayground.toolbox.component.ipc;
 
+import playground.android.me.sr1.androidplayground.toolbox.component.ipc.IpcCallback;
 
 interface IpcInterface {
     /**
@@ -11,5 +12,5 @@ interface IpcInterface {
      * 这个是异步化接口，实际的异步要在实现端保证，
      * 返回值是为了告诉调用方是否正常交付处理
      */
-    // int invokeAsync(in String cmd, in android.os.Bundle data, int IpcCallback callback);
+    int invokeAsync(in String cmd, in android.os.Bundle data, in IpcCallback callback);
 }
