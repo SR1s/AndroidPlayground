@@ -1,5 +1,7 @@
 package playground.android.me.sr1.androidplayground.sample;
 
+import android.support.annotation.NonNull;
+
 import playground.android.me.sr1.androidplayground.IntroduceFragment;
 import playground.android.me.sr1.androidplayground.MainActivity;
 import playground.android.me.sr1.androidplayground.R;
@@ -8,6 +10,8 @@ import playground.android.me.sr1.androidplayground.ViewPager.ViewPagerFragment;
 import playground.android.me.sr1.androidplayground.book.FiftyHacks.SwitcherFragment;
 import playground.android.me.sr1.androidplayground.book.FirstLineOfCode.Media.NotificationFragment;
 import playground.android.me.sr1.androidplayground.book.FirstLineOfCode.Service.ServiceFragment;
+import playground.android.me.sr1.androidplayground.course.uda_city_material_design.lesson4.ScenceFragment;
+import playground.android.me.sr1.androidplayground.sample.sample_with_code.SampleWithCodeFragment;
 import playground.android.me.sr1.androidplayground.toolbox.component.activity.DrawerActivity;
 import playground.android.me.sr1.androidplayground.webview.BaseWebViewFragment;
 
@@ -22,6 +26,7 @@ public class SampleActivity extends DrawerActivity<DrawerActivity.DrawerItem> {
         return R.layout.list_item;
     }
 
+    @NonNull
     @Override
     protected DrawerItem[] getDrawerItemData() {
         return new DrawerItem[]{
@@ -34,7 +39,8 @@ public class SampleActivity extends DrawerActivity<DrawerActivity.DrawerItem> {
                 new DrawerItem("TextSwitcher", new SwitcherFragment()),
                 new DrawerItem("Notification", new NotificationFragment()),
                 new DrawerItem("Service", new ServiceFragment()),
-                new DrawerItem("侧边栏工具类样例", SampleActivity.class)
+                new DrawerItem("侧边栏工具类样例", SampleActivity.class),
+                new DrawerItem("代码展示", new SampleWithCodeFragment())
         };
     }
 
