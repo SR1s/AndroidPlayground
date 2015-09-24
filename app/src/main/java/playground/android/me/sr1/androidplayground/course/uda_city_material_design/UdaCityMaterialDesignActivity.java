@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import playground.android.me.sr1.androidplayground.IntroduceFragment;
 import playground.android.me.sr1.androidplayground.R;
+import playground.android.me.sr1.androidplayground.course.uda_city_material_design.lesson4.ContentTransitionActiviry;
 import playground.android.me.sr1.androidplayground.course.uda_city_material_design.lesson4.ScenceFragment;
 import playground.android.me.sr1.androidplayground.course.uda_city_material_design.lesson4.TwoScenceFragment;
 import playground.android.me.sr1.androidplayground.toolbox.component.activity.DrawerActivity;
@@ -26,7 +27,8 @@ public class UdaCityMaterialDesignActivity extends DrawerActivity {
         return new DrawerItem[] {
                 new DrawerItem("课程简介", new IntroduceFragment()),
                 new DrawerItem("Lesson 4: Scence", new ScenceFragment()),
-                new DrawerItem("Lesson 4: Transition between Scence", new TwoScenceFragment())
+                new DrawerItem("Lesson 4: Transition between Scence", new TwoScenceFragment()),
+                new DrawerItem("Lesson 4: Content Transition", ContentTransitionActiviry.class)
         };
     }
 

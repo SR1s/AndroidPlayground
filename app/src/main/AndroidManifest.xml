@@ -28,6 +28,8 @@
         <activity android:name=".course.CourseIndexActivity" />
         <!-- UdaCity 的 Material Design 视频课程 -->
         <activity android:name=".course.uda_city_material_design.UdaCityMaterialDesignActivity" />
+        <!-- UdaCity 的 Material Design 视频课程: 第四课 ActivityTransition -->
+        <activity android:name=".course.uda_city_material_design.lesson4.ContentTransitionActiviry" />
 
         <service
             android:name=".book.FirstLineOfCode.Service.MyService"

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<playground.android.me.sr1.androidplayground.course.uda_city_material_design.lesson4.SquareLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ImageView
+        android:src="@android:color/holo_red_light"
+        android:scaleType="fitXY"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</playground.android.me.sr1.androidplayground.course.uda_city_material_design.lesson4.SquareLayout>
