@@ -5,9 +5,20 @@ import java.util.ArrayList;
 import playground.android.me.sr1.androidplayground.R;
 
 /**
+ * 数据辅助类，用于快速得到编写Demo或者测试用的假数据
  * Created by sr1 on 15/8/12.
  */
 public class DataHelper {
+
+    public static final int[] IMAGE_RESOURCE_IDS = {
+            R.drawable.data_image_chrysanthemum,
+            R.drawable.data_image_desert,
+            R.drawable.data_image_hydrangeas,
+            R.drawable.data_image_jellyfish,
+            R.drawable.data_image_lighthouse,
+            R.drawable.data_image_penguins,
+            R.drawable.data_image_tulips
+    };
 
     public static ArrayList<ChapterData> getChapterData() {
         ArrayList<ChapterData> data = new ArrayList<ChapterData>();
@@ -29,7 +40,8 @@ public class DataHelper {
                     "　　马想说些什么，但张了张嘴，什么也没说出来。\n" +
                     "　　后来，驴子继续在磨坊拉磨，而马也还继续耕地拉车，风里来雨里去，每天吃那可怜的几个玉米棒子。\n" +
                     "　　日子在平静中度过，直到有一天被农夫的儿子打破。农夫的儿子食物中毒，需要紧急赶到五里路外的镇上去抢救。\n" +
-                    "　　农夫非常着急，他想起了上次比赛获胜的驴子，于是急匆匆地把驴子从磨坊牵出来套上车，载着儿子往镇上赶，可无论他怎么吆喝。驴子就是原地打转，一阵折腾后，儿子断了气……"
+                    "　　农夫非常着急，他想起了上次比赛获胜的驴子，于是急匆匆地把驴子从磨坊牵出来套上车，载着儿子往镇上赶，可无论他怎么吆喝。驴子就是原地打转，一阵折腾后，儿子断了气……",
+                    IMAGE_RESOURCE_IDS[0 % IMAGE_RESOURCE_IDS.length]
                 ));
         data.add(new ChapterData(
                     "征服的人生",
@@ -43,7 +55,8 @@ public class DataHelper {
                     "　　一声洪亮的啼哭声惊动了所有听到它的人。人们欢声高呼，相互拥抱。劫犯双手沾满鲜血——是一个崭新生命的鲜血，而不是罪恶的鲜血。他的脸上挂着职业的满足和微笑。人们向他致意，忘了他是一个劫犯。\n" +
                     "　　当警察将手铐戴在他手上时，他说：“谢谢你们让我尽了一个医生的职责。这个小生命是我从医以来第一个在我枪口下出生的婴儿，他的勇敢征服了我。我现在感觉自己不是劫犯，而是一个救死扶伤的医生。”\n" +
                     "　　罪恶会被一个幼小的生命征服，不是因为他强大和伟大，而是仅仅在于他是一个需要生存权利的生命而已。生命的征服，就是如此简单。\n" +
-                    "　　这是一个绝对真实的故事，它发生在美国的洛杉矶市。"
+                    "　　这是一个绝对真实的故事，它发生在美国的洛杉矶市。",
+                    IMAGE_RESOURCE_IDS[1 % IMAGE_RESOURCE_IDS.length]
                 ));
         data.add(new ChapterData(
                     "长得慢的树更能成材",
@@ -58,7 +71,8 @@ public class DataHelper {
                     "　　从此，阿尔伯特不再逃学了。有一天，在手工课上，阿尔伯特费了很大的劲做出了一只难看的小板凳，结果遭到了全班同学的嘲笑。但是，父亲没有嘲笑他，因为通过这只制作粗糙的小板凳，父亲看到儿子身上已经具备了一种难能可贵的韧性。\n" +
                     "　　你可能已经猜到阿尔伯特是谁了。没错！阿尔伯特经过不懈的努力，终于成为了二十世纪最伟大的物理学家、思想家和哲学家，他的全名是阿尔伯特·爱因斯坦。\n" +
                     "　　人生寄语\n" +
-                    "　　如果你也是一个生性迟钝的孩子，读了爱因斯坦的故事，你还会为自己的不同寻常而自卑吗？记住，你是一棵长得慢的树，之所以长得慢，是因为你有足够的耐心和信心，去长成一棵参天大树。"
+                    "　　如果你也是一个生性迟钝的孩子，读了爱因斯坦的故事，你还会为自己的不同寻常而自卑吗？记住，你是一棵长得慢的树，之所以长得慢，是因为你有足够的耐心和信心，去长成一棵参天大树。",
+                    IMAGE_RESOURCE_IDS[2 % IMAGE_RESOURCE_IDS.length]
                 ));
         data.add(new ChapterData(
                     "扫树叶的小和尚",
@@ -71,7 +85,8 @@ public class DataHelper {
                     "　　第二天，小和尚到院子一看，不禁傻眼了。院子里如往日一样落叶满地。 \n" +
                     "　　老和尚走了过来，对小和尚说：“傻孩子，无论你今天怎么用力，明天的落叶还是会飘下来。” \n" +
                     "　　小和尚终于明白了，世上有很多事是无法提前的，唯有认真的活在当下，才是最真实的人生态度。 \n" +
-                    "　　许多人喜欢预支明天的烦恼，想要早一步解决掉明天的烦恼。明天如果有烦恼，你今天是无法解决的，每一天都有每一天的人生功课要交，努力做好今天的功课再说吧！"
+                    "　　许多人喜欢预支明天的烦恼，想要早一步解决掉明天的烦恼。明天如果有烦恼，你今天是无法解决的，每一天都有每一天的人生功课要交，努力做好今天的功课再说吧！",
+                    IMAGE_RESOURCE_IDS[3 % IMAGE_RESOURCE_IDS.length]
                 ));
         data.add(new ChapterData(
                     "生活中的哲学",
@@ -89,7 +104,8 @@ public class DataHelper {
                     "　　6、小的时候经常去打鸟，于是大人就常用这样一道老掉牙的题来考我们小孩：树上有十个鸟，用枪打掉了一个，还剩几个？答案是一个不剩了，因为另外的九只鸟也给吓跑了。\n" +
                     "　　我家楼下有一个小杂货店，老板娘很不会做生意，有的时候顾客买到了质量有问题的商品，找到她的时候，她就对顾客恶语相向，还谩骂顾客，一点点的，周围的人都知道了她家的服务态度不好，就都不去她家买货了，没过半年，她家只好关门。其实，我们那里的住户有一百多家，和她吵架的也就五六家，但因为得罪了五六家人，所以坏名声传出去了，其他那些人家也就都不来了。\n" +
                     "　　7、我家的园子里有一棵果树，爸爸每到春天的时候就会用剪刀给果树剪枝，我问爸爸为什么要给果树剪枝，爸爸回答说，如果果树不剪枝，那么它的营养就会分散，营养一分散，果子就长不大，剪掉多余的树枝，使营养能够集中供应到保留的那几棵树枝上，那么上面的果子就会长得又大又好吃。\n" +
-                    "　　许多人在年轻的时候，会为自己定下许多理想，同时学习许多种不同类型的知识，想把自己培养成一个无所不能的通才。但人的精力是有限的，人不可能什么都精通，结果是样样通样样松，什么都会一点，却又没有一样精通。学贵专精，把不适合自己的那些理想剪掉，把有限的精力集中在一两项专业上，那样才能有成就。"
+                    "　　许多人在年轻的时候，会为自己定下许多理想，同时学习许多种不同类型的知识，想把自己培养成一个无所不能的通才。但人的精力是有限的，人不可能什么都精通，结果是样样通样样松，什么都会一点，却又没有一样精通。学贵专精，把不适合自己的那些理想剪掉，把有限的精力集中在一两项专业上，那样才能有成就。",
+                    IMAGE_RESOURCE_IDS[4 % IMAGE_RESOURCE_IDS.length]
         ));
 
         return data;
@@ -100,11 +116,13 @@ public class DataHelper {
         public String mTitle;
         public String mDate;
         public String mContent;
+        public int mImageId;
 
-        public ChapterData(String title, String date, String content) {
+        public ChapterData(String title, String date, String content, int imageId) {
             this.mTitle = title;
             this.mDate = date;
             this.mContent = content;
+            this.mImageId = imageId;
         }
     }
 

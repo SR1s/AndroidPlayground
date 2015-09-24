@@ -48,7 +48,7 @@ public class ViewPagerFragment extends Fragment {
         mData = DataHelper.getChapterData();
         mFragments = new ArrayList<Fragment>();
         for (DataHelper.ChapterData data : mData) {
-            mFragments.add(ChapterFragment.newInstance(data.mTitle, data.mDate, data.mContent));
+            mFragments.add(ChapterFragment.newInstance(data.mTitle, data.mDate, data.mContent, data.mImageId));
         }
 
         mViewPager = (ViewPager) view.findViewById(R.id.viewPager);
