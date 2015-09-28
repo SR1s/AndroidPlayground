@@ -74,12 +74,12 @@ class GridAdapter extends BaseAdapter {
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, ContentTransitionDetailActivity.class);
                 if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
-                    if (mSetExitTransition) {
-                    } else {
+                    if (!mSetExitTransition) {
                         intent.putExtra(ContentTransitionDetailActivity.KEY_ENABLE_DEFAULT_EFFECT, true);
                     }
                     // 不加上这个是没有Transition效果的
-                    Bundle bundle = ActivityOptions.makeSceneTransitionAnimation((Activity) mContext).toBundle();
+                    Bundle bundle = ActivityOptions.makeSceneTransitionAnimation((Activity) mContext,
+                            v, v.getTransitionName()).toBundle(); // Shared Element Transitions
                     mContext.startActivity(intent, bundle);
                     mSetExitTransition = !mSetExitTransition;
                 } else {

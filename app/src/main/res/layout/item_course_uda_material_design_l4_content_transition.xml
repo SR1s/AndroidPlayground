@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <ImageView
+        android:transitionName="@string/course_uda_material_design_l4_shared_element_transition_image_view"
         android:id="@+id/imageView"
         android:src="@android:color/holo_red_light"
         android:scaleType="centerCrop"

@@ -34,4 +34,6 @@
     <string name="book_50_android_hacks_chinese">打造高质量Android应用\nAndroid开发必知的50个诀窍</string>
     <string name="book_first_line_of_code">第一行代码: Android</string>
     <string name="book_first_line_of_code_extra">由浅入深、系统全面\n讲解Android软件开发方方面面</string>
+
+    <string name="course_uda_material_design_l4_shared_element_transition_image_view">course_uda_material_design_l4_shared_element_transition_image_view</string>
 </resources>
