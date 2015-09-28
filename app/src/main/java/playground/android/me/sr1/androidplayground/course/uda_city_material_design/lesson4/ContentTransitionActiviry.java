@@ -38,6 +38,8 @@ class GridAdapter extends BaseAdapter {
     private int mCount;
     private int[] mImageResourceIds =DataHelper.IMAGE_RESOURCE_IDS;
 
+    private boolean mSetExitTransition = true;
+
     public GridAdapter(Context context, int count) {
         mCount = count;
         mContext = context;
@@ -72,8 +74,14 @@ class GridAdapter extends BaseAdapter {
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, ContentTransitionDetailActivity.class);
                 if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+                    if (mSetExitTransition) {
+                    } else {
+                        intent.putExtra(ContentTransitionDetailActivity.KEY_ENABLE_DEFAULT_EFFECT, true);
+                    }
+                    // 不加上这个是没有Transition效果的
                     Bundle bundle = ActivityOptions.makeSceneTransitionAnimation((Activity) mContext).toBundle();
                     mContext.startActivity(intent, bundle);
+                    mSetExitTransition = !mSetExitTransition;
                 } else {
                     mContext.startActivity(intent);
                 }
