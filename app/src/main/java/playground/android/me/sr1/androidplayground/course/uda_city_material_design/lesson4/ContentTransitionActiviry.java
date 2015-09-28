@@ -14,7 +14,6 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-import playground.android.me.sr1.androidplayground.App;
 import playground.android.me.sr1.androidplayground.R;
 import playground.android.me.sr1.androidplayground.toolbox.utils.DataHelper;
 
@@ -61,18 +60,28 @@ class GridAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.item_course_uda_material_design_l4_content_transition, null);
             View imageView = convertView.findViewById(R.id.imageView);
             convertView.setTag(imageView);
         }
+
+        final int imageId = mImageResourceIds[position % mImageResourceIds.length];
+        final DataHelper.ChapterData data = DataHelper.getChapterData().get(position % DataHelper.getChapterData().size());
+
         ImageView imageView = (ImageView) convertView.findViewById(R.id.imageView);
-        imageView.setImageResource(mImageResourceIds[position % mImageResourceIds.length]);
+        imageView.setImageResource(imageId);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, ContentTransitionDetailActivity.class);
+
+                intent.putExtra(ContentTransitionDetailActivity.KEY_CHAPTER_TITLE, data.mTitle);
+                intent.putExtra(ContentTransitionDetailActivity.KEY_CHAPTER_DATE, data.mDate);
+                intent.putExtra(ContentTransitionDetailActivity.KEY_CHAPTER_IMAGE_ID, imageId);
+                intent.putExtra(ContentTransitionDetailActivity.KEY_CHAPTER_CONTENT, data.mContent);
+
                 if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
                     if (!mSetExitTransition) {
                         intent.putExtra(ContentTransitionDetailActivity.KEY_ENABLE_DEFAULT_EFFECT, true);
