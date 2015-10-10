@@ -12,8 +12,27 @@
         android:id="@+id/demos_service_stop_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/demos_service_start_intent_filter_service_without_action"
+        android:text="开启IntentFilter服务(无Action)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/demos_service_start_intent_filter_service_with_action"
+        android:text="开启IntentFilter服务(有Action)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="关闭IntentFilter服务"
+        android:id="@+id/demos_service_stop_intent_filter_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <TextView
         android:text="1. 多次启动，一次关闭Service，Service会关闭吗？"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="2. 注册的时候带了IntentFilter的Service，不加该Action的情况下能启动吗？"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

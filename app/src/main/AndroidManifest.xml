@@ -53,6 +53,11 @@
 
         <!-- Demo: Service: MainProcessService -->
         <service android:name=".demos.service.MainProcessService" />
+        <service android:name=".demos.service.MainProcessServiceWithIntentFilter">
+            <intent-filter>
+                <action android:name="playground.android.me.sr1.androidplayground.demos.service.MAIN_PROCESS_SERVICE_WITH_INTENT_FILTER" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
