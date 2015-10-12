@@ -69,7 +69,13 @@ public class ContentTransitionDetailActivity extends AppCompatActivity {
                 slide.setInterpolator(AnimationUtils.loadInterpolator(this, android.R.interpolator.linear_out_slow_in));
                 slide.setDuration(300);
                 getWindow().setEnterTransition(slide);
+                getWindow().setExitTransition(slide);
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }
