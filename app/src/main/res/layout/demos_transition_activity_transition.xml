@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true" />
+
+    <View
+        android:id="@+id/leftTop"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:background="@color/country_wedding_cyan"
+        android:layout_toStartOf="@+id/divider"
+        android:layout_toLeftOf="@+id/divider"
+        android:layout_alignBottom="@+id/divider" />
+
+    <View
+        android:id="@+id/rightTop"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:background="@color/country_wedding_red"
+        android:layout_toEndOf="@+id/divider"
+        android:layout_toRightOf="@+id/divider"
+        android:layout_alignBottom="@+id/divider" />
+
+    <View
+        android:id="@+id/leftBottom"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:background="@color/country_wedding_yellow"
+        android:layout_toStartOf="@+id/divider"
+        android:layout_toLeftOf="@+id/divider"
+        android:layout_alignTop="@+id/divider" />
+
+    <View
+        android:id="@+id/rightBottom"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="5dp"
+        android:background="@color/country_wedding_green"
+        android:layout_toEndOf="@+id/divider"
+        android:layout_toRightOf="@+id/divider"
+        android:layout_alignTop="@+id/divider" />
+
+
+</RelativeLayout>

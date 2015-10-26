@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="border_color">#ffffff</color>
+    <color name="border_color">@color/white</color>
     <color name="bg_color_deep">#333333</color>
     <color name="bg_color_light">#ffffff</color>
     <color name="intro_title_color">#cccccc</color>
@@ -8,4 +8,23 @@
     <color name="text_sub_title">#aaaaaa</color>
     <color name="text_title">#333333</color>
     <color name="text_content">#333333</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#CCCCCC</color>
+
+    <!-- 鲜艳糖果: http://www.peise.net/2015/1019/5168.html -->
+    <color name="sugar_red">#CA1524</color>
+    <color name="sugar_pink">#F84B4D</color>
+    <color name="sugar_yellow">#FC9C12</color>
+    <color name="sugar_green">#438A08</color>
+    <color name="sugar_blue">#1E3058</color>
+
+    <!-- 法国乡村婚礼: http://www.peise.net/2015/1008/5152.html -->
+    <color name="country_wedding_red">#F5675D</color>
+    <color name="country_wedding_yellow">#EDDC49</color>
+    <color name="country_wedding_green">#72CB6F</color>
+    <color name="country_wedding_cyan">#5FBDB7</color>
+    <color name="country_wedding_blue">#6984E3</color>
+
+    <!-- 秋日白日梦: http://www.peise.net/2015/1012/5157.html -->
 </resources>

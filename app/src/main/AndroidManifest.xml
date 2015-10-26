@@ -38,6 +38,9 @@
         <activity android:name=".course.uda_city_material_design.lesson4.ContentTransitionActiviry" />
         <activity android:name=".course.uda_city_material_design.lesson4.ContentTransitionDetailActivity" />
         <activity android:name=".course.uda_city_material_design.lesson4.MyShapeTransitionActivity" />
+        <activity android:name=".demos.transition.TransitionMainActivity" />
+        <activity android:name=".demos.transition.TransitionConceptActivity" />
+        <activity android:name=".demos.transition.ActivityTransitionActivity" />
 
         <service
             android:name=".book.FirstLineOfCode.Service.MyService"
