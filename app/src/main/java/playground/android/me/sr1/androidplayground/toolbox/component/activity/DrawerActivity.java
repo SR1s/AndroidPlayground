@@ -1,5 +1,6 @@
 package playground.android.me.sr1.androidplayground.toolbox.component.activity;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -136,8 +137,15 @@ public abstract class DrawerActivity<DataType extends DrawerActivity.DrawerItem>
                 DataType data = mData[position];
                 if (data.mDest instanceof Class) {
                     // 如果打开的是Activity，则维持侧边栏打开状态，不改变显示区域，所以标记位置不需要改动
+
                     Intent intent = new Intent(getApplicationContext(), (Class) data.mDest);
-                    startActivity(intent);
+                    // 5.0以上支持下Transition动画
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                        Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(DrawerActivity.this).toBundle();
+                        startActivity(intent, bundle);
+                    } else {
+                        startActivity(intent);
+                    }
                 } else if (data.mDest instanceof Fragment) {
                     // 如果打开的是Fragment，则关闭侧边栏，将显示区域换为那个Fragment，更新标记位置
                     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
