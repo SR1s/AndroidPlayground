@@ -41,6 +41,7 @@
         <activity android:name=".demos.transition.TransitionMainActivity" />
         <activity android:name=".demos.transition.TransitionConceptActivity" />
         <activity android:name=".demos.transition.ActivityTransitionActivity" />
+        <activity android:name=".demos.transition.SimpleTransitionActivity" />
 
         <service
             android:name=".book.FirstLineOfCode.Service.MyService"

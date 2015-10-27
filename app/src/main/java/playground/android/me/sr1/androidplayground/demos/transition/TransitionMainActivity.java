@@ -75,10 +75,13 @@ public class TransitionMainActivity extends AppCompatActivity {
         mainList.setLayoutManager(new LinearLayoutManager(this));
         mainList.setItemAnimator(new DefaultItemAnimator());
 
-        mItems.add(new Item("基本概念: Scene, TransitonSet, \nTransitionFragment, SharedElement",
-                R.color.sugar_blue, TransitionConceptActivity.class));
-        mItems.add(new Item("举个例子: Activity之间", R.color.sugar_green, ActivityTransitionActivity.class));
-        mItems.add(new Item("举个例子: Fragment之间", R.color.sugar_yellow, null));
+        mItems.add(new Item("基本概念",
+                R.color.sugar_red, TransitionConceptActivity.class));
+        mItems.add(new Item("简单的变换",
+                R.color.sugar_blue, SimpleTransitionActivity.class));
+        mItems.add(new Item("Activity之间",
+                R.color.sugar_green, ActivityTransitionActivity.class));
+        mItems.add(new Item("Fragment之间", R.color.sugar_yellow, null));
         mItems.add(new Item("使用代码还是使用Xml", R.color.sugar_pink, null));
         mItems.add(new Item("工具类: AnimationUtils, Interpolaor", R.color.sugar_red, null));
         mItems.add(new Item("矢量图形: svg格式", R.color.sugar_blue, null));
