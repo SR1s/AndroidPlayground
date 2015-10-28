@@ -40,8 +40,10 @@
         <activity android:name=".course.uda_city_material_design.lesson4.MyShapeTransitionActivity" />
         <activity android:name=".demos.transition.TransitionMainActivity" />
         <activity android:name=".demos.transition.TransitionConceptActivity" />
-        <activity android:name=".demos.transition.ActivityTransitionActivity" />
         <activity android:name=".demos.transition.SimpleTransitionActivity" />
+        <activity android:name=".demos.transition.ActivityTransitionActivity" />
+        <activity android:name=".demos.transition.ActivityTransitionDetailActivity" />
+        <activity android:name=".demos.transition.FragmentTransitionActivity" />
 
         <service
             android:name=".book.FirstLineOfCode.Service.MyService"

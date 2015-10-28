@@ -5,8 +5,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Explode;
 import android.transition.Fade;
+import android.transition.Scene;
 import android.transition.Slide;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.transition.TransitionManager;
+import android.transition.TransitionSet;
 import android.transition.Visibility;
 import android.view.Gravity;
 import android.view.Menu;
@@ -30,7 +34,7 @@ public class SimpleTransitionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.demos_transition_activity_transition);
+        setContentView(R.layout.demos_transition_simple_transition);
 
         mRoot = (ViewGroup) findViewById(android.R.id.content);
         mLeftTop = findViewById(R.id.leftTop);
@@ -47,6 +51,7 @@ public class SimpleTransitionActivity extends AppCompatActivity {
         final MenuItem slideTop = menu.add("SlideTop");
         final MenuItem slideEnd = menu.add("SlideEnd");
         final MenuItem slideBottom = menu.add("SlideBottom");
+        final MenuItem complexChange = menu.add("Complex");
 
         MenuItem.OnMenuItemClickListener listener = new MenuItem.OnMenuItemClickListener() {
             @Override
@@ -66,6 +71,26 @@ public class SimpleTransitionActivity extends AppCompatActivity {
                         visibility = new Slide(Gravity.END);
                     } else if (item == slideBottom) {
                         visibility = new Slide(Gravity.BOTTOM);
+                    } else if (item == complexChange) {
+                        boolean isScene2 = mRoot.findViewById(R.id.title) != null;
+                        if (isScene2) {
+                            TransitionManager.go(
+                                    Scene.getSceneForLayout(mRoot,
+                                            R.layout.demos_transition_simple_transition,
+                                            App.getContext())
+                            );
+                        } else {
+                            Transition transition = TransitionInflater.from(App.getContext())
+                                    .inflateTransition(R.transition.demos_transition_scene_transition);
+
+                            TransitionManager.go(
+                                    Scene.getSceneForLayout(mRoot,
+                                            R.layout.demos_transition_simple_transition_scence2,
+                                            App.getContext()),
+                                    transition
+                            );
+                        }
+                        return true;
                     }
 
 
@@ -101,6 +126,7 @@ public class SimpleTransitionActivity extends AppCompatActivity {
         slideTop.setOnMenuItemClickListener(listener);
         slideEnd.setOnMenuItemClickListener(listener);
         slideBottom.setOnMenuItemClickListener(listener);
+        complexChange.setOnMenuItemClickListener(listener);
 
         return super.onCreatePanelMenu(featureId, menu);
     }

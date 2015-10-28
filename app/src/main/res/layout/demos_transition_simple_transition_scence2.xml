@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true" />
+
+    <View
+        android:id="@+id/leftTop"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/divider"
+        android:layout_margin="5dp"
+        android:layout_toLeftOf="@+id/divider"
+        android:layout_toStartOf="@+id/divider"
+        android:background="@color/country_wedding_cyan" />
+
+    <View
+        android:id="@+id/rightTop"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/divider"
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/divider"
+        android:layout_toRightOf="@+id/divider"
+        android:background="@color/country_wedding_red" />
+
+    <View
+        android:id="@+id/leftBottom"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/divider"
+        android:layout_margin="5dp"
+        android:layout_toLeftOf="@+id/leftTop"
+        android:layout_toStartOf="@+id/leftTop"
+        android:background="@color/country_wedding_yellow" />
+
+    <View
+        android:id="@+id/rightBottom"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/divider"
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/rightTop"
+        android:layout_toRightOf="@+id/rightTop"
+        android:background="@color/country_wedding_green" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/divider"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/sugar_blue"
+            android:text="看我变变变"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearance" />
+    </LinearLayout>
+
+
+</RelativeLayout>

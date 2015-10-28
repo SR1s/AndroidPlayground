@@ -81,7 +81,8 @@ public class TransitionMainActivity extends AppCompatActivity {
                 R.color.sugar_blue, SimpleTransitionActivity.class));
         mItems.add(new Item("Activity之间",
                 R.color.sugar_green, ActivityTransitionActivity.class));
-        mItems.add(new Item("Fragment之间", R.color.sugar_yellow, null));
+        mItems.add(new Item("Fragment之间",
+                R.color.sugar_yellow, FragmentTransitionActivity.class));
         mItems.add(new Item("使用代码还是使用Xml", R.color.sugar_pink, null));
         mItems.add(new Item("工具类: AnimationUtils, Interpolaor", R.color.sugar_red, null));
         mItems.add(new Item("矢量图形: svg格式", R.color.sugar_blue, null));
@@ -105,7 +106,6 @@ public class TransitionMainActivity extends AppCompatActivity {
     }
 
     class MainAdapter extends RecyclerView.Adapter<MainAdapter.MainViewHolder> {
-
 
         @Override
         public MainViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

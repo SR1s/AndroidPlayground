@@ -1,95 +1,103 @@
 package playground.android.me.sr1.androidplayground.demos.transition;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.TextView;
-
-import java.util.ArrayList;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
+import android.widget.ImageView;
 
 import playground.android.me.sr1.androidplayground.R;
+import playground.android.me.sr1.androidplayground.course.uda_city_material_design.lesson4.ContentTransitionDetailActivity;
+import playground.android.me.sr1.androidplayground.toolbox.utils.DataHelper;
 
 /**
- * Activity之间的变换例子
- * Created by SR1 on 15/10/24.
+ * Activity之间的Transition示例
+ * Created by srluo on 2015/9/24.
  */
 public class ActivityTransitionActivity extends AppCompatActivity {
-
-    ArrayList<Item> mItems = new ArrayList<Item>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_course_uda_material_design_l4_content_transition);
+        GridView gridView = (GridView) findViewById(R.id.gridView);
+        gridView.setAdapter(new GridAdapter(this, 100));
+    }
+}
 
-        RecyclerView conceptList = new RecyclerView(this);
-        conceptList.setLayoutManager(new LinearLayoutManager(this));
-        conceptList.setItemAnimator(new DefaultItemAnimator());
-        conceptList.setAdapter(new ConceptAdapter());
+class GridAdapter extends BaseAdapter {
 
-        mItems.add(new Item("Activity之间的变换:",
-                "假定有两个Activity，分别为A和B。A启动了B。\n\n" +
-                        "跟Activity相关的API围绕着：Exit、Enter、Return、ReEnter来构建。\n\n" +
-                        "Exit: 当A启动B的时候，A的View的动画效果；\n" +
-                        "Enter: 当A启动B的时候，B的View的动画效果；" +
-                        "Return: 当从B返回A的时候，B的View的动画效果；" +
-                        "ReEnter: 当从B返回A的时候，A的动画效果。"));
+    private Context mContext;
+    private int mCount;
+    private int[] mImageResourceIds = DataHelper.IMAGE_RESOURCE_IDS;
+    boolean mWithSharedElement = false;
 
-        setContentView(R.layout.demos_transition_activity_transition);
+    public GridAdapter(Context context, int count) {
+        mCount = count;
+        mContext = context;
     }
 
-    class Item {
-        String mTitle;
-        String mContent;
-
-        public Item(String title, String content) {
-            mTitle = title;
-            mContent = content;
-        }
+    @Override
+    public int getCount() {
+        return mCount;
     }
 
-    class ConceptAdapter extends RecyclerView.Adapter<ConceptAdapter.MainViewHolder> {
+    @Override
+    public Object getItem(int position) {
+        return null;
+    }
 
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-        @Override
-        public MainViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            return new MainViewHolder(LayoutInflater.from(ActivityTransitionActivity.this).inflate(
-                    R.layout.fragment_chapter, parent, false
-            ));
+    @Override
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.item_course_uda_material_design_l4_content_transition, null);
+            View imageView = convertView.findViewById(R.id.imageView);
+            convertView.setTag(imageView);
         }
 
-        @Override
-        public void onBindViewHolder(final MainViewHolder holder, int position) {
-            final Item item = mItems.get(position % mItems.size());
+        final int imageId = mImageResourceIds[position % mImageResourceIds.length];
+        final DataHelper.ChapterData data = DataHelper.getChapterData().get(position % DataHelper.getChapterData().size());
 
-            holder.mTitle.setText(item.mTitle);
-            holder.mContent.setText(item.mContent);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.imageView);
+        imageView.setImageResource(imageId);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, ActivityTransitionDetailActivity.class);
 
-        }
+                intent.putExtra(ContentTransitionDetailActivity.KEY_CHAPTER_TITLE, data.mTitle);
+                intent.putExtra(ContentTransitionDetailActivity.KEY_CHAPTER_DATE, data.mDate);
+                intent.putExtra(ContentTransitionDetailActivity.KEY_CHAPTER_IMAGE_ID, imageId);
+                intent.putExtra(ContentTransitionDetailActivity.KEY_CHAPTER_CONTENT, data.mContent);
 
-        @Override
-        public int getItemCount() {
-            return mItems == null ? 0 : mItems.size();
-        }
-
-        class MainViewHolder extends RecyclerView.ViewHolder {
-
-            TextView mTitle;
-            TextView mContent;
-
-            public MainViewHolder(final View itemView) {
-                super(itemView);
-                mTitle = (TextView) itemView.findViewById(R.id.title);
-                mContent = (TextView) itemView.findViewById(R.id.content);
-                itemView.findViewById(R.id.sub_title).setVisibility(View.GONE);
-                itemView.findViewById(R.id.image).setVisibility(View.GONE);
+                if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+                    Bundle bundle;
+                    if (mWithSharedElement) {
+                        bundle = ActivityOptions.makeSceneTransitionAnimation((Activity) mContext,
+                                v, v.getTransitionName()).toBundle();
+                    } else {
+                        bundle = ActivityOptions.makeSceneTransitionAnimation((Activity) mContext).toBundle();
+                    }
+                    mWithSharedElement = !mWithSharedElement;
+                    mContext.startActivity(intent, bundle);
+                } else {
+                    mContext.startActivity(intent);
+                }
             }
-        }
+        });
+
+        return convertView;
     }
 }
