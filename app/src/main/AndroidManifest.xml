@@ -20,11 +20,6 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".sample.SampleActivity" />
         <activity android:name=".demos.DemosIndexActivity" />
@@ -65,6 +60,25 @@
                 <action android:name="playground.android.me.sr1.androidplayground.demos.service.MAIN_PROCESS_SERVICE_WITH_INTENT_FILTER" />
             </intent-filter>
         </service>
+        <service android:name=".sample.mutilprocess.processA.ServiceA" />
+        <activity android:name=".sample.mutilprocess.processA.ActivityA" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name=".sample.mutilprocess.processA.ServiceA" />
+
+        <activity android:name=".sample.mutilprocess.processB.ActivityB"
+            android:process=":B" />
+        <service android:name=".sample.mutilprocess.processB.ServiceB"
+            android:process=":B" />
+
+        <activity android:name=".sample.mutilprocess.processC.ActivityC"
+            android:process=":C" />
+        <service android:name=".sample.mutilprocess.processC.ServiceC"
+            android:process=":C" />
     </application>
 
 </manifest>

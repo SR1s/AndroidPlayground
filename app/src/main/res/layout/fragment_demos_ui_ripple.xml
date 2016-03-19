@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <playground.android.me.sr1.androidplayground.toolbox.widget.RippleEdgeView
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:layout_height="match_parent">
+        <TextView
+            android:text="RRRRAARARAR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </playground.android.me.sr1.androidplayground.toolbox.widget.RippleEdgeView>
+    <android.support.v7.widget.RecyclerView
+        android:fadingEdgeLength="20dp"
+        android:id="@+id/lv_demos_ui_ripple"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
